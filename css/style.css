@@ -1,0 +1,391 @@
+/* ========================================
+   共通・リセット
+   ======================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #333;
+  background-color: #f8f9fa;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* 固定ヘッダー用：メインの上にヘッダー分の余白を確保 */
+body {
+  padding-top: 64px;
+}
+
+/* ========================================
+   レイアウト用コンテナ
+   ======================================== */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ========================================
+   ヘッダー（固定）
+   ======================================== */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  background-color: #1a5f5a;
+  color: #fff;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.header-title a:hover {
+  opacity: 0.9;
+}
+
+/* ナビゲーション */
+.nav-list {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-list a {
+  padding: 4px 0;
+}
+
+.nav-list a:hover {
+  opacity: 0.85;
+  border-bottom: 2px solid #fff;
+}
+
+/* ハンバーガーボタン（PCでは非表示） */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 2px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.hamburger.is-active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.is-active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.is-active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ========================================
+   ヒーロー（トップページ）
+   ======================================== */
+.hero {
+  background: linear-gradient(135deg, #1a5f5a 0%, #2d8f88 100%);
+  color: #fff;
+  padding: 60px 20px 80px;
+  text-align: center;
+}
+
+.hero-inner {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: 1.75rem;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.hero-text {
+  font-size: 1rem;
+  opacity: 0.95;
+}
+
+/* ========================================
+   セクション共通
+   ======================================== */
+.section-title {
+  font-size: 1.5rem;
+  margin-bottom: 24px;
+  color: #1a5f5a;
+}
+
+/* 特徴カード（トップ） */
+.features {
+  padding: 60px 0;
+}
+
+.features-grid {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.feature-card {
+  flex: 1 1 280px;
+  max-width: 320px;
+  background: #fff;
+  padding: 32px 24px;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.feature-title {
+  font-size: 1.125rem;
+  color: #1a5f5a;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #2d8f88;
+}
+
+.feature-text {
+  font-size: 0.9375rem;
+  color: #555;
+}
+
+/* 診療時間 */
+.hours {
+  padding: 40px 0;
+  background: #fff;
+}
+
+.hours-text {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* 下層ページ用ヒーロー */
+.page-hero {
+  background: linear-gradient(135deg, #1a5f5a 0%, #2d8f88 100%);
+  color: #fff;
+  padding: 40px 20px;
+}
+
+.page-title {
+  font-size: 1.5rem;
+}
+
+/* テキストコンテンツ（about / contact） */
+.content {
+  padding: 48px 0 32px;
+}
+
+.content-title {
+  font-size: 1.25rem;
+  color: #1a5f5a;
+  margin: 24px 0 12px;
+}
+
+.content-title:first-child {
+  margin-top: 0;
+}
+
+.content-text {
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.contact-block {
+  margin-top: 24px;
+  padding: 24px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* ========================================
+   地図セクション（フッターの一つ上）
+   ======================================== */
+.map-section {
+  background: #fff;
+  padding: 48px 0 56px;
+}
+
+.map-container {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.contact-info {
+  flex: 0 0 280px;
+}
+
+.contact-info .section-title {
+  margin-bottom: 16px;
+}
+
+.contact-address,
+.contact-tel,
+.contact-email {
+  font-size: 0.9375rem;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.contact-email {
+  margin-bottom: 0;
+}
+
+.map-wrapper {
+  flex: 1;
+  min-height: 280px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.map-wrapper iframe {
+  display: block;
+  min-height: 280px;
+}
+
+/* ========================================
+   フッター
+   ======================================== */
+.footer {
+  background: #1a5f5a;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.copyright {
+  font-size: 0.875rem;
+  opacity: 0.9;
+}
+
+/* ========================================
+   スマホ用（768px以下）
+   ======================================== */
+@media (max-width: 768px) {
+  body {
+    padding-top: 56px;
+  }
+
+  .header {
+    height: 56px;
+  }
+
+  .header-inner {
+    padding: 0 16px;
+  }
+
+  .header-title {
+    font-size: 1.125rem;
+  }
+
+  /* ハンバーガー表示、ナビは開閉式 */
+  .hamburger {
+    display: flex;
+  }
+
+  .nav {
+    position: fixed;
+    top: 56px;
+    left: 0;
+    right: 0;
+    background: #1a5f5a;
+    padding: 16px;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.3s, opacity 0.3s, visibility 0.3s;
+  }
+
+  .nav.is-open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .nav-list li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .nav-list a {
+    display: block;
+    padding: 14px 0;
+  }
+
+  /* ヒーロー */
+  .hero {
+    padding: 40px 16px 60px;
+  }
+
+  .hero-title {
+    font-size: 1.375rem;
+  }
+
+  /* 地図セクション：縦並び */
+  .map-container {
+    flex-direction: column;
+  }
+
+  .contact-info {
+    flex: none;
+    width: 100%;
+  }
+
+  .map-wrapper {
+    min-height: 240px;
+    width: 100%;
+  }
+
+  .map-wrapper iframe {
+    min-height: 240px;
+  }
+}
